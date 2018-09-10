@@ -4,6 +4,5 @@
  */
 
 (function() {
-    var a = 'Site started!';
-    console.log(a);
+    
 }());

@@ -1,14 +1,14 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify_js = require('gulp-uglify');
-const uglify_css = require('gulp-uglifycss')
+const uglify_css = require('gulp-uglifycss');
 
 /*
  *  Slå ihop JavaScript och minifiera
  *  Spara både i src- och pub-mappen
  */
 gulp.task('concatjs', function() {
-    var task = gulp.src('src/js/*.js')
+    var task = gulp.src(['src/js/*.js', '!src/js/*.min.js'])
         .pipe(concat('site.min.js'))
         .pipe(uglify_js())
         .pipe(gulp.dest('src/js'))
@@ -22,7 +22,7 @@ gulp.task('concatjs', function() {
  *  Spara både i src- och pub-mappen
  */
 gulp.task('concatcss', function() {
-    var task = gulp.src('src/css/*.css')
+    var task = gulp.src(['src/css/*.css', '!src/css/*.min.css'])
         .pipe(concat('site.min.css'))
         .pipe(uglify_css())
         .pipe(gulp.dest('src/css'))
@@ -42,15 +42,26 @@ gulp.task('copyhtml', function() {
 });
 
 /*
+ *  Kopiera över bilder till pub
+ */
+gulp.task('copyimages', function() {
+    var task = gulp.src('src/img/*')
+        .pipe(gulp.dest('pub/img'));
+
+    return task;
+});
+
+/*
  *  Övervaka filändringar
  */
 gulp.task('watcher', function() {
     gulp.watch('src/js/*.js', ['concatjs']);
     gulp.watch('src/css/*.css', ['concatcss']);
     gulp.watch('src/*.html', ['copyhtml']);
+    gulp.watch('src/img/*', ['copyimages']);
 });
 
 /*
  *  Kör alla tasks som default.
  */
-gulp.task('default', ['concatjs', 'concatcss', 'copyhtml', 'watcher']);
+gulp.task('default', ['concatjs', 'concatcss', 'copyhtml', 'copyimages', 'watcher']);

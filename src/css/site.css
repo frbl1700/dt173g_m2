@@ -1,4 +1,18 @@
+/*
+ *  DT173G - Moment 2
+ *  Fredrik Blank
+ */
+
 html, body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
+}
+
+html {
+    background: #eee;
+}
+
+img.responsive {
+    max-width: 100%;
+    height:auto;
 }
