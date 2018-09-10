@@ -4,5 +4,5 @@
  */
 
 (function() {
-    
+    document.getElementById('footer-info').innerHTML = siteinfo.author + ' - ' + siteinfo.course;
 }());
