@@ -21,3 +21,15 @@ Gulp-uglify och Gulp-uglifycss är moduler som minifierar CSS- resp. JavaScript-
 Gulp-watch används för att i realtid övervaka ändringar som görs i filstrukturen och automatiskt göra uppgifter (tasks).
 
 I övrigt har Gulp använts för att kopiera HTML- och bildfiler till publiseringskatalogen.
+
+---
+
+För att initiera projektet och ladda ner alla moduler:
+
+```console
+user:~$ npm install && gulp
+```
+
+Gulp-tasks som körs default men som också kan köras separat:
+
+concatjs, concatcss, copyhtml, copyimages, watcher
