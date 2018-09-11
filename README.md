@@ -7,9 +7,9 @@ NodeJS & Gulp
 Detta moment behandlar automatisering med hjälp av Gulp.
 
 Automatisering underlättar och snabbar upp utvecklingsprocessen genom att\
-sköta enklare uppgifter så som filkopiering, minifiering och konkatenering.
+sköta enklare uppgifter så som kopiering, minifiering och konkatenering av filer.
 
-Moduler som använts:
+Moduler som används:
 
 * Gulp (+ watch)
 * Gulp-concat
