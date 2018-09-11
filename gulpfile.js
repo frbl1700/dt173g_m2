@@ -1,3 +1,8 @@
+/*
+ *  DT173G - Moment 2
+ *  Fredrik Blank
+ */
+ 
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const uglify_js = require('gulp-uglify');
